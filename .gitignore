@@ -1,0 +1,30 @@
+# 이미지 원본 데이터 (용량 큼, 저작권 이슈)
+images/
+images/*
+
+# SQLite DB 및 파생 파일
+crawls/*.sqlite
+crawls/*.sqlite-shm
+crawls/*.sqlite-wal
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+
+# Face embedding / FAISS index / PCA params
+data/*.faiss
+data/*.npz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# Env
+.env
+*.env
+.venv/
+venv/

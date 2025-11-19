@@ -1,0 +1,8 @@
+flask
+numpy
+opencv-python
+onnxruntime-gpu
+faiss-cpu
+insightface
+Pillow
+scipy
