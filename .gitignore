@@ -6,6 +6,7 @@ images/*
 crawls/*.sqlite
 crawls/*.sqlite-shm
 crawls/*.sqlite-wal
+crawls/*.parquet
 data/*.sqlite
 data/*.sqlite-shm
 data/*.sqlite-wal

@@ -279,7 +279,15 @@ HTML_TEMPLATE = """
 
   <form class="upload-box" method="POST" enctype="multipart/form-data">
     <div style="margin-bottom:0.5rem;">사진 한 장을 업로드해서 비슷한 얼굴을 찾아봅니다.</div>
-    <input type="file" name="image" accept="image/*" capture="environment" required>
+    <label style="display:block; margin-bottom:0.5rem;">
+      <input type="radio" name="source" value="gallery" checked style="width:auto; margin-right:0.25rem;">
+      갤러리에서 선택
+    </label>
+    <label style="display:block; margin-bottom:0.5rem;">
+      <input type="radio" name="source" value="camera" style="width:auto; margin-right:0.25rem;">
+      카메라로 촬영
+    </label>
+    <input type="file" id="imageInput" name="image" accept="image/*" required>
     <button type="submit">검색</button>
     {% if message %}
       <div class="msg">{{ message }}</div>
@@ -392,6 +400,24 @@ function showMode(mode) {
     }
   });
 }
+
+// 파일 입력 소스 전환 (갤러리 vs 카메라)
+document.addEventListener('DOMContentLoaded', function() {
+  const radios = document.querySelectorAll('input[name="source"]');
+  const fileInput = document.getElementById('imageInput');
+  
+  if (radios && fileInput) {
+    radios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'camera') {
+          fileInput.setAttribute('capture', 'environment');
+        } else {
+          fileInput.removeAttribute('capture');
+        }
+      });
+    });
+  }
+});
 </script>
 </body>
 </html>

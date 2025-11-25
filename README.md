@@ -1,6 +1,6 @@
 # NamuWiki Face Recognition & Look-Alike Search
 
-한국어 인물 데이터(나무위키)를 기반으로 얼굴 임베딩을 생성하고,  
+한국 인물 데이터(나무위키)를 기반으로 얼굴 임베딩을 생성하고,  
 동일인 식별(InsightFace) + 닮은꼴 추천(PCA 기반 Similarity Embedding)을 제공하는  
 로컬 검색 시스템.
 
